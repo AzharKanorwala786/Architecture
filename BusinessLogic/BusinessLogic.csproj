@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\IGenericBL.cs" />
     <Compile Include="Interfaces\IProdCategoryBL.cs" />
     <Compile Include="Interfaces\IProductBL.cs" />
+    <Compile Include="Mapping\MapViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

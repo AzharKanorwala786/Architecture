@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.Interfaces;
-using Data;
-using Core.ViewModels;
-using Core.Models;
 using BusinessLogic.Interfaces;
+using Data.Repositories;
+using Core.Interfaces;
 
 namespace BusinessLogic
 {
@@ -17,24 +15,39 @@ namespace BusinessLogic
 
         private bool disposed = false;
 
-        public IUOW UOW
+        public IUOW UOWP
         {
             get { return UnitOfWork; }
         }
 
-        public GenericBL(IUOW UnitOfWorks)
+        public GenericBL(IUOW UOW)
         {
-            UnitOfWork = UnitOfWorks;
+            UnitOfWork = UOW;
         }
 
-        protected IEnumerable<Entity> GetAll()
+        public virtual void Insert(Entity entity)
+        {
+            UnitOfWork.Repository<Entity>().Insert(entity);
+        }
+
+        public void Update(Entity entityObj)
+        {
+            UnitOfWork.Repository<Entity>().Update(entityObj);
+        }
+
+        public virtual void Delete<T>(T Id)
+        {
+            UnitOfWork.Repository<Entity>().Delete<T>(Id);
+        }
+
+        protected Entity FindbyId<T>(T Id)
+        {
+            return UnitOfWork.Repository<Entity>().FindById<T>(Id);
+        }
+
+        protected IEnumerable<Entity> GetAllProd()
         {
             return UnitOfWork.Repository<Entity>().GetAllProducts();
-        }
-
-        protected Entity GetbyID<T>(T Identity)
-        {
-            return UnitOfWork.Repository<Entity>().FindById<T>(Identity);
         }
 
         protected IQueryable<Entity> GetWhere(System.Linq.Expressions.Expression<Func<Entity, bool>> where)
@@ -42,28 +55,9 @@ namespace BusinessLogic
             return UnitOfWork.Repository<Entity>().GetWhere(where);
         }
 
-        public virtual void Insert(Entity Entry)
-        {
-            UnitOfWork.Repository<Entity>().Insert(Entry);
-
-        }
-
-        public virtual void Delete<T>(T Identity)
-        {
-            UnitOfWork.Repository<Entity>().Delete<T>(Identity);
-
-        }
-
-        public virtual void Update(Entity EntityObject)
-        {
-            UnitOfWork.Repository<Entity>().Update(EntityObject);
-
-        }
-
         public void SaveChanges()
         {
             UnitOfWork.SaveChanges();
-
         }
 
         protected virtual void Dispose(bool disposing)
