@@ -20,7 +20,6 @@ namespace Core.Models
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-        [Required]
         public string Image { get; set; }
 
         public int CategoryId { get; set; }

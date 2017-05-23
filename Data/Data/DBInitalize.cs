@@ -12,7 +12,7 @@ namespace Data.Data
     {
         protected override void Seed(DataContext context)
         {
-            context.Product.Add(new Product { Id = 1, Name = "Galaxy S8",CategoryId = 1 });
+            context.Product.Add(new Product { Id = 1, Name = "Galaxy S8", Price = 300,CategoryId = 1 });
 
             context.Category.Add(new Category { Id = 1, Name = "Mobiles" });
 

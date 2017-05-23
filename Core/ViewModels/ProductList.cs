@@ -10,5 +10,7 @@ namespace Core.ViewModels
     public class ProductList
     {
         public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<Category> Category { get; set; }
+
     }
 }

@@ -17,12 +17,12 @@ namespace BusinessLogic.BL
 
         public Category GetCategoryById(int Id)
         {
-            return GetbyID<int>(Id);
+            return FindbyId<int>(Id);
         }
 
         public IEnumerable<Category> GetAllCategory()
         {
-            return GetAll();
+            return GetAllCategory();
         }
     }
 }

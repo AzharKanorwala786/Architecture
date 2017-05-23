@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{E392CCB4-DCC5-47E8-B9F5-00027B251660}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{D7B79C59-5EFA-4512-BB3E-F11A0614EFB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{AAD6E034-74CD-4F8F-AEBB-F1C6A97902C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolver", "DependencyResolver\DependencyResolver.csproj", "{B9AAEE97-E06A-4B28-8F63-97E4725A7F09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{AAD6E034-74CD-4F8F-AEBB-F1C6A97902C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD6E034-74CD-4F8F-AEBB-F1C6A97902C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD6E034-74CD-4F8F-AEBB-F1C6A97902C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AAEE97-E06A-4B28-8F63-97E4725A7F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AAEE97-E06A-4B28-8F63-97E4725A7F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AAEE97-E06A-4B28-8F63-97E4725A7F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AAEE97-E06A-4B28-8F63-97E4725A7F09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
