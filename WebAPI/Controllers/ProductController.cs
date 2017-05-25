@@ -24,7 +24,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> GetAllProduct()
+        public IEnumerable<Product> GetProduct()
         {
             return _objProduct.GetAllProducts();
         }
@@ -36,51 +36,22 @@ namespace API.Controllers
 
         [HttpPost]
         [ResponseType(typeof(void))]
-        public IHttpActionResult CreateProduct(ProductCreate entity)
+        public IHttpActionResult Create(int id, ProductCreate entity)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            _objProduct.AddProduct(entity);
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        [HttpPut]
-        public IHttpActionResult UpdateProduct(int Id,ProductCreate entity)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (Id != entity.Id)
+               
+            if (id != entity.Id)
             {
                 return BadRequest();
             }
 
-            _objProduct.UpdateProduct(entity);
+            _objProduct.ProductCreate(id);
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        [HttpDelete]
-        public IHttpActionResult DeleteProduct(int Id)
-        {
-            Product prods = _objProduct.GetProductById(Id);
-
-            if(prods == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                _objProduct.DeleteProduct(Id);
-            }
-
-            return Ok(prods);
-        }
     }
 }

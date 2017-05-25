@@ -14,9 +14,12 @@ namespace BusinessLogic.Interfaces
         //Calling ViewModels
         void AddProduct(ProductCreate collection);
 
+        //void AddProduct(Product collection);
         void UpdateProduct(ProductCreate collection);
 
         void DeleteProduct(int Id);
+
+        Product GetProductById(int Id);
 
         ProductCreate ProductCreate(int id);
 

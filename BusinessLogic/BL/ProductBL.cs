@@ -17,6 +17,12 @@ namespace BusinessLogic.BL
         {
         }
 
+        //public void AddProduct(Product entity)
+        //{
+        //    base.Insert(entity);
+        //    base.SaveChanges();
+        //}
+
         public void AddProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
@@ -24,7 +30,7 @@ namespace BusinessLogic.BL
             base.Insert(prods);
             base.SaveChanges();
         }
-
+   
         public void UpdateProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
@@ -42,6 +48,10 @@ namespace BusinessLogic.BL
         public IEnumerable<Product> GetAllProducts()
         {
             return base.GetAllProd();
+        }
+        public Product GetProductById(int Id)
+        {
+            return base.FindbyId<int>(Id);
         }
 
         public IEnumerable<Product> GetProductsByCategoryId(int CategoryId)

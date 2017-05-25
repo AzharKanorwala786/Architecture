@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Interfaces;
 using Data.Data;
+using System.Data.Entity.Infrastructure;
 
 namespace Data.Repositories
 {
@@ -52,9 +53,17 @@ namespace Data.Repositories
 
 
         // Save Changes 
-        public int SaveChanges()
+        public void SaveChanges()
         {
-            return context.SaveChanges();
+            try
+            {
+                context.SaveChanges();
+            }
+
+            catch (DbUpdateConcurrencyException ex)
+            {
+                 ex.Entries.Single().Reload();
+            }
         }
 
 

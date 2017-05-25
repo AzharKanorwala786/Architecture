@@ -13,6 +13,6 @@ namespace Core.Interfaces
         IGenericRepository<T> Repository<T>() where T: class;
 
         // Save Changes
-        int SaveChanges();
+        void SaveChanges();
     }
 }

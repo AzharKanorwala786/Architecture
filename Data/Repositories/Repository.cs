@@ -83,7 +83,8 @@ namespace Data.Repositories
         {
             return EntityDbSet.ToList();
         }
-
+        
+        //Get by specific condition
         public virtual IQueryable<Entity> GetWhere(System.Linq.Expressions.Expression<Func<Entity, bool>> where)
         {
             return EntityDbSet.Where(where);
