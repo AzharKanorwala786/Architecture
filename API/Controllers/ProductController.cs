@@ -63,7 +63,7 @@ namespace API.Controllers
 
             _objProduct.UpdateProduct(entity);
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Ok();
         }
 
         [HttpDelete]
