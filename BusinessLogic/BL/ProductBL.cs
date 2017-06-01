@@ -26,6 +26,7 @@ namespace BusinessLogic.BL
         public void AddProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
+            //prods.CategoryName = collection.CategoryName;
             prods.CategoryId = collection.CategoryId;
             base.Insert(prods);
             base.SaveChanges();
@@ -34,7 +35,7 @@ namespace BusinessLogic.BL
         public void UpdateProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
-            prods.Id = collection.Id;
+            //prods.CategoryName = collection.CategoryName;
             prods.CategoryId = collection.CategoryId;
             base.Update(prods);
             base.SaveChanges();

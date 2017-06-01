@@ -7,10 +7,9 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using BusinessLogic.Interfaces;
 using Core.Models;
 using Core.ViewModels;
-
-
 namespace UI.Controllers
 {
     public class ProductController : Controller
@@ -41,9 +40,10 @@ namespace UI.Controllers
             return View("Error");
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
-            return View(new ProductCreate());
+           return PartialView(new ProductCreate());
         }
 
         [HttpPost]

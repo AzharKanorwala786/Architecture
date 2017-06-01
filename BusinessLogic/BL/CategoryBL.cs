@@ -22,7 +22,7 @@ namespace BusinessLogic.BL
 
         public IEnumerable<Category> GetAllCategory()
         {
-            return GetAllCategory();
+            return GetAllProd();
         }
     }
 }

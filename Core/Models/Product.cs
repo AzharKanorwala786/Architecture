@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Models
 {
-    public class Product
+    public partial class Product
     {
         public int Id { get; set; }
 
@@ -24,7 +25,9 @@ namespace Core.Models
 
         public int CategoryId { get; set; }
 
-        public Category Category { get; set; }
+        //public string CategoryName { get;set; }
+
+        public virtual Category Category { get; set; }
 
     }
 }

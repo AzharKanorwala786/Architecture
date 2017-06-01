@@ -22,6 +22,8 @@ namespace Core.ViewModels
 
         public int CategoryId { get; set; }
 
+        //public string CategoryName { get; set; }
+
         public IEnumerable<Category> Categories { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using Core.Models;
 
 namespace Data.Data
 {
-    public class DBInitalize :DropCreateDatabaseAlways<DataContext>
+    public class DBInitalize :DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {

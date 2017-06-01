@@ -28,6 +28,7 @@ namespace API.Controllers
         {
             return _objProduct.GetAllProducts();
         }
+
         [HttpGet]
         public IEnumerable<Product> GetProduct(int id)
         {
@@ -41,6 +42,11 @@ namespace API.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            else
+            {
+                entity.Categories = _objProductCategory.GetAllCategory();
             }
 
             _objProduct.AddProduct(entity);
@@ -60,7 +66,10 @@ namespace API.Controllers
             {
                 return BadRequest();
             }
-
+            else
+            {
+                entity.Categories = _objProductCategory.GetAllCategory();
+            }
             _objProduct.UpdateProduct(entity);
 
             return Ok();
