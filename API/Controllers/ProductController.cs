@@ -55,6 +55,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [ResponseType(typeof(void))]
         public IHttpActionResult UpdateProduct(int Id,ProductCreate entity)
         {
             if (!ModelState.IsValid)
@@ -72,7 +73,7 @@ namespace API.Controllers
             }
             _objProduct.UpdateProduct(entity);
 
-            return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         [HttpDelete]

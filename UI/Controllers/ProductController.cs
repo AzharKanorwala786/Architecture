@@ -57,7 +57,7 @@ namespace UI.Controllers
             }
             return RedirectToAction("Error");
         }
-      
+ 
         public async Task<ActionResult> Update(int id)
         {
             HttpResponseMessage responseMessage = await client.GetAsync(url + "/" + id);
@@ -66,7 +66,7 @@ namespace UI.Controllers
             {
                 var responseData = responseMessage.Content.ReadAsStringAsync().Result;
 
-                var Product = JsonConvert.DeserializeObject<Product>(responseData);
+                var Product = JsonConvert.DeserializeObject<ProductCreate>(responseData);
 
                 return View(Product);
             }

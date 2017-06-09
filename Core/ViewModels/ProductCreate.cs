@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using Core.Models;
-
-namespace Core.ViewModels
+﻿namespace Core.ViewModels
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using Core.Models;
+
     public class ProductCreate
     {
         public int Id { get; set; }
@@ -21,8 +17,6 @@ namespace Core.ViewModels
         public decimal Price { get; set; }
 
         public int CategoryId { get; set; }
-
-        //public string CategoryName { get; set; }
 
         public IEnumerable<Category> Categories { get; set; }
     }

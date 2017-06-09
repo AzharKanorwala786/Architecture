@@ -17,12 +17,6 @@ namespace BusinessLogic.BL
         {
         }
 
-        //public void AddProduct(Product entity)
-        //{
-        //    base.Insert(entity);
-        //    base.SaveChanges();
-        //}
-
         public void AddProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
@@ -35,7 +29,6 @@ namespace BusinessLogic.BL
         public void UpdateProduct(ProductCreate collection)
         {
             Product prods = MapViewModels.MapObject<ProductCreate, Product>(collection);
-            //prods.CategoryName = collection.CategoryName;
             prods.CategoryId = collection.CategoryId;
             base.Update(prods);
             base.SaveChanges();
@@ -51,6 +44,7 @@ namespace BusinessLogic.BL
         {
             return base.GetAllProd();
         }
+
         public Product GetProductById(int Id)
         {
             return base.FindbyId<int>(Id);
@@ -73,7 +67,10 @@ namespace BusinessLogic.BL
 
         public ProductCreate ProductCreate(int id)
         {
-            throw new NotImplementedException();
+            Product prod = GetProductById(id);
+            ProductCreate prods = MapViewModels.MapObject<Product, ProductCreate>(prod);
+            prods.CategoryId = prod.CategoryId;
+            return prods;
         }
     }
 }
