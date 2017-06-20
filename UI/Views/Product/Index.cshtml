@@ -3,7 +3,7 @@
 <p><br />
     @Html.ActionLink("Create", "Create", "Product", null, new
    {
-       @class = "modal-link",
+       @class = "btn btn-primary modal-link",
 
        data_target = "#myModal",
 
@@ -54,8 +54,8 @@
             @Html.DisplayFor(modelItem => item.Category.Name)
         </td>
         <td>
-            @Html.ActionLink("Update", "Update", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Update", "Update", new { id=item.Id }, new { @class = "btn btn-sm btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-sm btn-danger" })
         </td>
     </tr>
 }
